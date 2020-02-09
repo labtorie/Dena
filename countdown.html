@@ -28,7 +28,7 @@ body{
 }
 
 .countdown {
-  font-family: fantasy;
+  font-family: sans-serif;
   color: #fff;
   display: inline-block;
   font-weight: 100;
@@ -62,7 +62,9 @@ body{
 	 font-family: system-ui;
     padding: 40px; /* Поля вокруг текста */
     background: rgba(255,255,255,0.5); /* Цвет фона */
-	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	    .ios.bg-overlay {
+        -webkit-backdrop-filter: blur(20px); 
 	font-size: 50px; 
     color: #2b2b2b; /* Цвет текста */
     width: 100%; /* Ширина слоя */
