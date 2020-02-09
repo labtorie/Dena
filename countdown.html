@@ -1,0 +1,128 @@
+
+<title>Жесть блин</title>
+<style>
+body{
+	background-image: url('bkg.jpg');
+	background-size: cover;
+	text-align:center;
+}
+#block {z-index:1; 
+  text-align: center;
+	font-family: system-ui;
+	position: center; 
+	margin: 70px 0px 0px 0px;
+	width:90%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.6);
+	backdrop-filter:blur(20px);
+	border-radius: 30px; 
+	}
+.countdown-title {
+  color: #FFF;
+   font-family: system-ui;
+  font-weight: 100;
+  font-size: 50px;
+  margin: 40px 0px 20px;
+}
+
+.countdown {
+  font-family: system-ui;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 80px;
+  margin: 30px;
+}
+
+.countdown-number {
+  padding: 10px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.2);
+  display: inline-block;
+}
+
+.countdown-time {
+  padding: 15px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.countdown-text {
+  display: block;
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+   #footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+	 font-family: system-ui;
+    padding: 40px; /* Поля вокруг текста */
+    background: rgba(255,255,255,0.5); /* Цвет фона */
+	backdrop-filter:blur(20px);
+	font-size: 50px; 
+    color: #2b2b2b; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+</style>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Feb 17, 2020 17:20:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+ // document.getElementById("timer").innerHTML = days + " Дней " + hours + " Часов "
+ // + minutes + " Минут " + seconds + " Секунд ";
+  document.getElementById("DD").innerHTML= ('0' + days).slice(-2);
+  document.getElementById("HH").innerHTML= ('0' + hours).slice(-2);
+  document.getElementById("MM").innerHTML= ('0' + minutes).slice(-2);
+  document.getElementById("SS").innerHTML= ('0' + seconds).slice(-2);
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "УРА!!";
+  }
+}, 1000);
+</script>
+
+<body>
+<div id="block" style="display: inline-block;">
+<h1 class="countdown-title">До встречи с Деной...</h1>
+<div id="countdown" class="countdown">
+  <div class="countdown-number">
+    <span class="days countdown-time" id="DD"></span>
+    <span class="countdown-text">Дней</span>
+  </div>
+  <div class="countdown-number">
+    <span class="hours countdown-time" id="HH"></span>
+    <span class="countdown-text">Часов</span>
+  </div>
+  <div class="countdown-number">
+    <span class="minutes countdown-time" id="MM"></span>
+    <span class="countdown-text">Минут</span>
+  </div>
+  <div class="countdown-number">
+    <span class="seconds countdown-time" id="SS"></span>
+    <span class="countdown-text">Секунд</span>
+  </div>
+</div>
+</div>
+ <div id="footer">
+   а ето не так уж и много........
+  </div>
+</body>
