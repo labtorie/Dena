@@ -99,14 +99,14 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("timer").innerHTML = "УРА!!";
+    document.getElementById("tit").innerHTML = "УРА!!";
   }
 }, 1000);
 </script>
 
 <body>
 <div id="block" style="display: inline-block;">
-<h1 class="countdown-title">До встречи с Деной...</h1>
+<h1 class="countdown-title" id="tit">До встречи с Деной...</h1>
 <div id="countdown" class="countdown">
   <div class="countdown-number">
     <span class="days countdown-time" id="DD"></span>
