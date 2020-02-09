@@ -56,20 +56,31 @@ body{
 }
 
    #footer {
+   z-index:1;
     position: fixed; /* Фиксированное положение */
     left: 0; bottom: 0; /* Левый нижний угол */
 	 font-family: system-ui;
-    padding: 40px; /* Поля вокруг текста */
+    padding: 0px; /* Поля вокруг текста */
     background: rgba(255,255,255,0.5); /* Цвет фона */
-	font-size: 50px; 
+	font-size: 40px; 
     color: #2b2b2b; /* Цвет текста */
     width: 100%; /* Ширина слоя */
 	   	backdrop-filter: blur(20px);
 	   -webkit-backdrop-filter: blur(20px); }
+	   #bar 
+	   {
+	   z-index:2;
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+	 background: rgba(0,255,0,0.9); /* Цвет фона */
+    width: 10%; /* Ширина слоя */
+	height: 15px;
+	}
 </style>
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Feb 17, 2020 17:20:25").getTime();
+var countDownDate = new Date("Feb 17, 2020 17:00:00").getTime();
+var lastMeet = new Date("Feb 8, 2020 23:50:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -79,6 +90,7 @@ var x = setInterval(function() {
 
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
+  var perc = ((now - lastMeet) / (countDownDate - lastMeet)) * 100;
 
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -93,6 +105,8 @@ var x = setInterval(function() {
   document.getElementById("HH").innerHTML= ('0' + hours).slice(-2);
   document.getElementById("MM").innerHTML= ('0' + minutes).slice(-2);
   document.getElementById("SS").innerHTML= ('0' + seconds).slice(-2);
+  document.getElementById('bar').style.width = perc+'%';
+  document.getElementById('passed').innerHTML="Прошло уже "+perc.toFixed(4)+"%";
 
   // If the count down is finished, write some text
   if (distance < 0) {
@@ -125,6 +139,7 @@ var x = setInterval(function() {
 </div>
 </div>
  <div id="footer">
-   а ето не так уж и много........
+ <div id = "bar"></div>
+  <p id = "passed">  ... </p>
   </div>
 </body>
