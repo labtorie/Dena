@@ -6,6 +6,7 @@ html {
     width: 100%;
     height: auto;
     margin: 0px;
+	text-align:center;
     padding: 0px;
     top: 0;
     left: 0;
@@ -13,14 +14,14 @@ html {
 }
 	
 .fixed-crossbrowser-background {
- position: fixed;
-    width: 100%;
-	height: auto;
+	position: fixed;
     top: 0;
     left: 0;
-    background-repeat: no-repeat;
-    background-position: bottom center;
+	height:100%;
+	width:100%;
     background-image: url("bkg.jpg");
+    background-size: cover;
+    background-clip: border-box;
     opacity: 1;
     z-index: -1;
 }
@@ -209,10 +210,8 @@ var x = setInterval(function() {
 		</div>
 
 	</div>
-	<br>
  <div id="footer">
  <div id = "bar"></div>
   <p id = "passed">  ... </p>
   </div>
 </body>
-
