@@ -72,14 +72,14 @@ body{
 	}
 	.txt {
 	 display: block;
- 	 padding: 30px 0px 30px 0px;
+ 	 padding: 30px 0px 0px 30px;
  	 font-size: 40px;
 	 color: #bbb;
 	}
 	.date {
 	text-align:right;
 	 display: block;
- 	 padding: auto;
+ 	 padding: 0px 30px 30px 0px;
  	 font-size: 20px;
 	 color: #888888;
 	}
@@ -96,13 +96,14 @@ body{
     width: 100%; /* Ширина слоя */
 	   	backdrop-filter: blur(20px);
 	   -webkit-backdrop-filter: blur(20px); }
-	   #bar 
+	
+ #bar 
 	   {
 	   z-index:2;
     position: fixed; /* Фиксированное положение */
     left: 0; bottom: 0; /* Левый нижний угол */
 	 background: #ff8100; /* Цвет фона */
-    width: 1%; /* Ширина слоя */
+    width: 0%; /* Ширина слоя */
 	height: 15px;
 	}
 </style>
